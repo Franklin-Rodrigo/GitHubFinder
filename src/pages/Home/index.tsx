@@ -11,7 +11,9 @@ import { IStarProps } from '../../TS/Interfaces/IStarProps';
 import { IUser } from '../../TS/Interfaces/IUser';
 
 import {
-    FormRadio,
+    RadioButton,
+    Item,
+    RadioButtonLabel,
     Empty,
     Form,
     CleanFilterContainer,
@@ -171,16 +173,30 @@ const Home: React.FC = () => {
 
                             {stars[0]?.id ? (
                                 <Section width={100} hasContent={!!user.login}>
-                                    <FormRadio>
-                                        <input type="radio" id="repos" name="radio" onChange={() => {
-                                            setRadioSelect('repos')
-                                        }} checked={radioSelect === 'repos'} />
-                                        <label htmlFor="repos">Repositorio</label>
-                                        <input type="radio" id="starred" name="radio" onChange={() => {
-                                            setRadioSelect('starred')
-                                        }} checked={radioSelect === 'starred'} />
-                                        <label htmlFor="starred">Estrelado</label>
-                                    </FormRadio>
+                                    <Item>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            onChange={() => {
+                                                setRadioSelect('starred')
+                                            }}
+                                            checked={radioSelect === 'starred'}
+                                        />
+                                        <RadioButtonLabel />
+                                        <div>Favoritos</div>
+                                    </Item>
+                                    <Item>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            onChange={() => {
+                                                setRadioSelect('repos')
+                                            }}
+                                            checked={radioSelect === 'repos'}
+                                        />
+                                        <RadioButtonLabel />
+                                        <div>Reposotorios</div>
+                                    </Item>
                                     {stars.map(
                                         ({
                                             id,
@@ -203,16 +219,30 @@ const Home: React.FC = () => {
                                 </Section>
                             ) :
                                 <Section width={100} hasContent={!!user.login}>
-                                    <FormRadio>
-                                        <input type="radio" id="repos" name="radio" onChange={() => {
-                                            setRadioSelect('repos')
-                                        }} checked={radioSelect === 'repos'} />
-                                        <label htmlFor="repos">Repositorio</label>
-                                        <input type="radio" id="starred" name="radio" onChange={() => {
-                                            setRadioSelect('starred')
-                                        }} checked={radioSelect === 'starred'} />
-                                        <label htmlFor="starred">Estrelado</label>
-                                    </FormRadio>
+                                    <Item>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            onChange={() => {
+                                                setRadioSelect('starred')
+                                            }}
+                                            checked={radioSelect === 'starred'}
+                                        />
+                                        <RadioButtonLabel />
+                                        <div>Favoritos</div>
+                                    </Item>
+                                    <Item>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            onChange={() => {
+                                                setRadioSelect('repos')
+                                            }}
+                                            checked={radioSelect === 'repos'}
+                                        />
+                                        <RadioButtonLabel />
+                                        <div>Reposotorios</div>
+                                    </Item>
 
                                     <Empty> Vazio </Empty>
                                 </Section>

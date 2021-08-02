@@ -12,7 +12,61 @@ interface FormProps {
 // `;
 
 // export const Logo = styled.img``;
+export const Item = styled.div`
+  display: flex;
+  align-items: center;
+  height: 48px;
+  position: relative;
+`;
 
+export const RadioButtonLabel = styled.label`
+  position: absolute;
+  top: 25%;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #bebebe;
+`;
+export const RadioButton = styled.input`
+  opacity: 0;
+  z-index: 1;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  &:hover ~ ${RadioButtonLabel} {
+    background: #bebebe;
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 6px;
+      background: #eeeeee;
+    }
+  }
+  ${(props) =>
+    props.checked &&
+    ` 
+    &:checked + ${RadioButtonLabel} {
+      background: #ffa500;
+      border: 1px solid #ffa500;
+      &::after {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        margin: 6px;
+        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+        background: white;
+      }
+    }
+  `}
+`;
 export const Form = styled.form<FormProps>`
   margin-top: 40px;
   max-width: 700px;
@@ -68,12 +122,6 @@ export const Form = styled.form<FormProps>`
   }
 `;
 
-export const FormRadio = styled.form`
-  margin-top: 50px;  
-  margin-left: 15px;
-  padding: 10px;
-  font-size: 20px;
-`;
 export const Empty = styled.h3`
   margin-bottom: 15px;
   color: 'red';
