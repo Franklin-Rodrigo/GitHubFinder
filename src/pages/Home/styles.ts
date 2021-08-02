@@ -28,6 +28,8 @@ export const RadioButtonLabel = styled.label`
   border-radius: 50%;
   background: white;
   border: 1px solid #bebebe;
+  cursor: pointer;
+
 `;
 export const RadioButton = styled.input`
   opacity: 0;
@@ -36,6 +38,8 @@ export const RadioButton = styled.input`
   width: 24px;
   height: 24px;
   margin-right: 10px;
+  cursor: pointer;
+
   &:hover ~ ${RadioButtonLabel} {
     background: #bebebe;
     &::after {
