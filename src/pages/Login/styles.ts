@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 
+export const Logo = styled.img`
+max-height: 200px;
+      @media(max-width: 800px) {
+        max-width: 200px;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;

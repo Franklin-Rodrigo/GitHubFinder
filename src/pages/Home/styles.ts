@@ -11,7 +11,13 @@ interface FormProps {
 //   line-height: 56px;
 // `;
 
-// export const Logo = styled.img``;
+export const Logo = styled.img`
+margin-top: 5vh;
+max-height: 150px;
+      @media(max-width: 800px) {
+        max-width: 200px;
+  }
+`;
 export const Item = styled.div`
   display: flex;
   align-items: center;

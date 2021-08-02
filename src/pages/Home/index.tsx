@@ -5,12 +5,13 @@ import github from '../../services/api';
 
 import CardBio from '../../components/CardBio';
 
-
+import logoImg from '../../assets/logo.png';
 import CardStar from '../../components/CardStar';
 import { IStarProps } from '../../TS/Interfaces/IStarProps';
 import { IUser } from '../../TS/Interfaces/IUser';
 
 import {
+    Logo,
     RadioButton,
     Item,
     RadioButtonLabel,
@@ -134,7 +135,7 @@ const Home: React.FC = () => {
     return (
         <>
             <Container>
-                {/* <Logo src={logoImg} alt="Logo" /> */}
+                <Logo src={logoImg} alt="Logo" />
 
                 <Form hasError={!!inputError} onSubmit={handleFindUser}>
                     <input
