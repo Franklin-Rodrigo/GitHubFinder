@@ -3,14 +3,6 @@ interface FormProps {
   hasError: boolean;
 }
 
-// export const Title = styled.h1`
-//   font-size: 48px;
-//   color: #3a3a3a;
-//   margin-top: 80px;
-//   max-width: 450px;
-//   line-height: 56px;
-// `;
-
 export const Logo = styled.img`
 margin-top: 5vh;
 max-height: 150px;
@@ -101,10 +93,13 @@ export const Form = styled.form<FormProps>`
       color: #a8a8b3;
     }
   }
-
   input:focus{
-      box-shadow: 0 0 0 0;
-      outline:0;
+    outline: none !important;
+    ${(props) =>
+    !props.hasError &&
+    css`
+      box-shadow: 0 0 10px #cc8502;
+    `}
   }
   button {
     width: 210px;
@@ -181,6 +176,7 @@ export const Sections = styled.div<SectionProps>`
   @media(max-width: 800px) {
     flex-direction: column;
     position: relative;
+    max-width: 100%;
   }
   ${(props) =>
     props.hasContent
@@ -219,8 +215,3 @@ export const Container = styled.div`
   margin-Right: 10%;
 
 `;
-// export const WithoutContentImg = styled.img`
-//   margin-top: 50px;
-//   width: 500px;
-// `;
-

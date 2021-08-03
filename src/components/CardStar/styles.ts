@@ -22,6 +22,12 @@ export const Container = styled.a`
 
 export const ContentContainer = styled.div`
   padding-right: 20px;
+  @media(max-width: 800px) {
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
 `;
 
 export const Name = styled.h3`

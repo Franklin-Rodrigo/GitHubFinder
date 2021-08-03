@@ -5,6 +5,8 @@ export const SectionInfoContainer = styled.div`
   align-items: center;
   @media (max-width: 1200px) {
     flex-direction: column;
+    max-width: 100%;
+    align-self: center;
   }
 
 `;
