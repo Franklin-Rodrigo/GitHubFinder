@@ -26,7 +26,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         localStorage.setItem('@UOL:Code', response.code);
         history.push("/")
     };
-    const onFailure = (response: Response) => console.error(response);
+    const onFailure = (response: Response) => alert("Error no login!");
 
     return (
         <AuthContext.Provider value={{ signed: !!code, onSuccess, onFailure }}>
